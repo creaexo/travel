@@ -1,0 +1,378 @@
+/*Стиили для всего сайта*/
+* 
+{margin: 0;
+padding: 0;
+box-sizing: border-box;} /*говорит браузеру учитывать любые границы и внутренние отступы в значениях, которые вы указываете в ширине и высоте элемента.*/
+
+html
+{font: normal 16px sans-serif;
+color: #555;}
+
+ul, nav
+{list-style: none;}
+
+a
+{text-decoration: none;
+color: inherit;
+cursor: pointer;
+opacity: 0.9;}
+
+a:hover
+{opacity: 1;}
+
+a.btn
+{color: #fff;
+border-radius: 4px;
+text-transform: uppercase;
+background-color: #219fa3;
+font-weight: 500;
+text-align: center;
+padding: 20px;
+}
+
+section
+{display: flex; /*Это свойство создаёт сам flex контейнер, инлайновый или блочный, в зависимости от заданного значения. Также оно задает flex-контекст каждому прямому потомку.*/
+flex-direction: column;/*flex-direction задаёт направление основных осей в контейнере и тем самым определяет положение флексов в контейнере.Главная ось располагается вертикально и направлена сверху вниз.*/
+align-items: center; /* Центрировать элементы в поперечной оси */
+padding: 50px 70px;}
+
+section h2.title
+{color: #219fa3;
+text-transform: uppercase; 
+font: bold 32px 'Open Sans', sans-serif;
+margin-bottom: 35px;
+text-align: center}
+
+section p
+{max-width: 1200px;
+text-align: center;
+margin-bottom: 35px;
+padding: 0 20px;
+line-height: 2;}
+
+ul.grid
+{width: 100%;
+display: flex;
+flex-wrap: wrap;/*Указывает, следует ли флексам располагаться в одну строку или можно занять несколько строк. Если перенос строк допускается, то свойство также позволяет контролировать направление, в котором выкладываются строки.Флексы выстраиваются в несколько строк, их направление задаётся свойством flex-direction.*/
+justify-content: center;}/*управляет выравниванием элементов по главной оси.Флексы выравниваются по центру строки.*/
+
+/*Шапка*/
+header
+{position: absolute;
+top: 0;
+left: 0;
+z-index: 10;
+width: 100%;
+display: flex;
+justify-content: space-between; /*Флексы равномерно распределяются по всей строке. Первый и последний элемент прижимаются к соответствующим краям контейнера.*/
+align-items: center; /* Центрировать элементы в поперечной оси */
+color: #fff;
+padding: 35px 100px 0;}
+
+header h1
+{font-family: 'Quicksand', sans-serif;}
+
+header nav
+{display: flex;}
+
+/*Слоган*/
+.hero
+{position: relative;
+justify-content: center;
+min-height: 100vh; /*Единица vh соответствует 1% от высоты области просмотра браузера, таким образом, 100vh равно всей высоте области просмотра. Элементы, высота которых задана в единицах vh будут менять свой размер при изменении размеров окна браузера.*/
+color: #fff;
+text-align: center;}
+
+.hero .background-image
+{position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-size: cover; /*Масштабирует фоновое изображение, согласно заданным размерам.Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока.*/
+background-color: #2196F3;
+z-index: -1;}
+
+.hero .background-image:after
+{content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #414a4f;
+opacity: 0.75;}
+
+.hero h1
+{font: bold 50px 'Open Sans', sans-serif;
+margin-bottom: 15px;}
+
+.hero h2
+{font: normal 28px 'Open Sans', sans-serif;
+margin-bottom: 40px;}
+
+.hero a.btn
+{padding: 20px 46px;}
+
+
+/*Особенности туров*/
+.reviews
+{background-color: #f1f1f1;}
+
+.reviews .quote
+{text-align: center;
+width: 90%;
+font-size: 22px;
+font-weight: 300;
+line-height: 1.5;
+margin-bottom: 20px;
+padding: 0;}
+
+.reviews .author
+{font-size: 28px;
+margin-bottom: 20px;
+color: #219fa3;}
+
+/*Фильтр*/
+.slider input[type="radio"] {  display: none;}
+#btn-1:checked ~ .slider-controls label[for="btn-1"],
+#btn-2:checked ~ .slider-controls label[for="btn-2"],
+#btn-3:checked ~ .slider-controls label[for="btn-3"] {
+  background-color: #666666;}
+
+
+/*Слайдер*/
+.slider
+{display: flex;
+justify-content: center;
+text-align: center;}
+
+.item
+{display: flex;
+justify-content: center;
+align-items: center;
+height: 50vh;
+background: dimgray;
+color: #fff;
+padding: 0 20px;
+flex-basis: 25%;
+transition: all 0.2s;}
+
+.item:hover
+{flex-basis: 85%;}
+
+.item-1, .item-3
+{background: #414a4f;}
+
+.item-2, .item-4
+{background: #219fa3;}
+
+span
+{font: 16px 'Open Sans', sans-serif;}
+
+
+
+/*Подбор тура*/
+.contact
+{background-color: #f1f1f1;}
+
+.contact form
+{display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+max-width: 800px;
+width: 80%;}
+
+.contact form input
+{color: #555;
+font-size: 18px;
+margin-right: 30px;
+padding: 15px;
+flex: 1;}
+
+.contact form .btn
+{padding: 18px 42px;}
+
+/*Футер*/
+footer
+{background-color: #414a4f;
+color: #fff;
+padding: 60px 0;
+display: flex;
+text-align: center;
+align-items: center;
+flex-direction: column;}
+
+footer ul
+{display: flex;
+font-size: 42px;
+margin-bottom: 15px;}
+
+footer ul li
+{margin: 0 40px;}
+
+footer ul li:first-child
+{margin-left: 0;}
+
+footer ul li:last-child
+{margin-right: 0;}
+
+footer p
+{text-transform: uppercase;
+font-size: 14px;
+color: rgba(255, 255, 255, 0.6);
+margin-bottom: 10px;}
+
+footer p a
+{color: #fff;}
+
+.buttonup
+{position: fixed;
+bottom: 20px;
+left: 94vw;}
+
+/*Адаптация под смартфон*/
+@media only screen and (min-width : 375px) and (max-width : 768px)
+{
+
+section {padding: 60px 30px;}
+
+header {flex-direction: column;}
+
+header h1{text-align: center;
+margin-bottom: 20px;}
+
+.hero {min-height: 600px;}
+
+.hero h1{font-size: 32px;
+margin-top: 90px;}
+
+.hero h2{font-size: 20px;}
+
+section h2.title {
+font: bold 26px 'Open Sans', sans-serif;}
+
+section p
+{max-width: 768px;
+text-align: center;
+margin-bottom: 35px;
+padding: 0 15px;
+line-height: 1.4;}
+
+.reviews .author{font-size: 22px;}
+.reviews .quote{font-size: 18px;}
+
+.reviews .quote {width: 100%;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.ff-container label {
+min-height: 40px;
+font-size: 20px;
+padding: 0 20px 20px 20px;
+line-height: 2;
+}
+
+.manager li img {
+margin: auto;
+}
+
+.features .grid li {
+flex-basis: 100%;
+padding: 0 10px;
+}
+
+.slider
+{height: 100vh;
+flex-flow: column;}
+
+.item
+{width: 100%;
+height: 25%;}
+
+.item:hover
+{flex-grow: 20%;}
+
+.contact form input{flex-basis: 100%;
+margin: 0 0 20px 0;}
+footer {padding: 20px 15px;}
+footer ul li {
+  margin: 0 15px; 
+}
+.buttonup{display: none;}
+}
+
+/*Адаптация под планшет*/
+@media only screen and (min-width : 769px) and (max-width : 1024px)
+{.features .grid li {
+  flex-basis: 50%;
+  padding: 0 10px;
+  text-align: center;
+  }}
+
+  .product h4
+{text-align: center;
+color: #219fa3;
+line-height: 2;}
+.product, .ff-items
+{background-color: Ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;}
+
+.ff-container label{
+font-family: 'Arial Narrow', Arial, sans-serif;
+min-height: 50px;
+cursor: pointer;
+color: #777;
+font-size: 24px;
+padding: 0 20px 30px 20px;
+}
+
+.ff-items
+{display: flex;
+justify-content: center;
+margin-top: 30px;
+}
+
+.ff-container input{
+  display: none;
+}
+  .ff-items li{
+  width: 0;
+  transform: scale(0,0);}
+  .ff-items li img{
+  max-width: 100%;
+  padding: 0px 20px;}
+  .ff-container input.ff-all:checked ~ .ff-items li
+  {min-width: 350px;
+  transform: scale(1,1);
+  transition: transform 0.3s linear;}
+  .ff-container input.ff-rus:checked ~ .ff-itemt .item-rus,
+  .ff-container input.ff-ind:checked ~ .ff-items .item-ind,
+  .ff-container input.ff-kit:checked ~ .ff-items .item-kit,
+  .ff-container input.ff-viet:checked ~ .ff-items .item-viet
+  {transition: transform 0.3s linear, width linear 0.3s;
+  animation: scaleUp 0.3s linear 0.4s forwards;}
+
+  .ff-container input.ff-rus:checked ~ .ff-items li:not(.item-rus),
+  .ff-container input.ff-ind:checked ~ .ff-items li:not(.item-ind),
+  .ff-container input.ff-kit:checked ~ .ff-items li:not(.item-kit),
+  .ff-container input.ff-viet:checked ~ .ff-items li:not(.item-viet)
+  {animation: scaleDown 0.4s linear forwards;}
+  @keyframes scaleUp
+  {
+  50% {min-width: 300px; transform: scale(0,0);}
+  100% {min-width: 300px; transform: scale(1,1);}
+  }
+  @keyframes scaleDown
+  {
+  0% {min-width: 300px; transform: scale(1,1);}
+  90% {min-width: 300px; transform: scale(0,0);}
+  100% {min-width: 300px; transform: scale(0,0);}
+  }
